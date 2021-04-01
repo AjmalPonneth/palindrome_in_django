@@ -8,5 +8,4 @@ def check_palindrome_or_not(request):
     check = request.POST.get('palindrome')
     string = str(check)
     IsPalindrome = string.find(string[::-1]) == 0
-    print(IsPalindrome)
     return render(request, 'index.html', {'form': form, 'palindrome': IsPalindrome})
