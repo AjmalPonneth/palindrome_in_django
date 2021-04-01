@@ -55,6 +55,24 @@
                   {% csrf_token %} {{form.as_p}}
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                <br />
+                {% if palindrome%}
+                <div class="mb-3">
+                  <div class="row">
+                    <div class="col">
+                      <p class="text-success"><b>Its Palindrome</b></p>
+                    </div>
+                  </div>
+                </div>
+                {% else %}
+                <div class="mb-3">
+                  <div class="row">
+                    <div class="col">
+                      <p class="text-danger"><b>Not A Palindrome</b></p>
+                    </div>
+                  </div>
+                </div>
+                {% endif%}
               </div>
             </div>
           </div>

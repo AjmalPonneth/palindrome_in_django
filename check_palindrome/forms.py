@@ -2,4 +2,5 @@ from django import forms
 
 
 class PalindromeForm(forms.Form):
-    palindrome = forms.CharField(label='Palindrome', max_length=100)
+    palindrome = forms.CharField(
+        widget=forms.TextInput(attrs={'class': 'form-control'}))
