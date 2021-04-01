@@ -1,8 +1,5 @@
-from django.forms import ModelForm
-from .models import Palindrome
+from django import forms
 
 
-class PalindromeForm(ModelForm):
-    class Meta:
-        model = Palindrome
-        fields = '__all__'
+class PalindromeForm(forms.Form):
+    palindrome = forms.CharField(label='Palindrome', max_length=100)

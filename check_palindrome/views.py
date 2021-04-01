@@ -4,11 +4,9 @@ from .forms import PalindromeForm
 
 
 def check_palindrome_or_not(request):
-    # form = PalindromeForm(request.POST)
-    # check = request.POST.get('palindrome')
-    # IsPalindrome = check.find(check[::-1]) == 0
-    # context = {
-    #     'form': form,
-    #     'palindrome': IsPalindrome
-    # }
-    return render(request, 'index.html')
+    form = PalindromeForm(request.POST)
+    check = request.POST.get('palindrome')
+    string = str(check)
+    IsPalindrome = string.find(string[::-1]) == 0
+    print(IsPalindrome)
+    return render(request, 'index.html', {'form': form, 'palindrome': IsPalindrome})
